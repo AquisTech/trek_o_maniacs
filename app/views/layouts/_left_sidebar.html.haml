@@ -2,4 +2,4 @@
   %ul.menu.vertical
     - (ActiveRecord::Base.connection.tables - ['schema_migrations', 'ar_internal_metadata']).each do |model|
       %li
-        = link_to model.titleize, send("#{model}_path")
+        = #link_to model.titleize, send("#{model}_path")
