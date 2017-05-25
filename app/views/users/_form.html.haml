@@ -63,7 +63,7 @@
       = f.datetime_select :confirmation_sent_at, {order: [:day, :month, :year], date_separator: ' / '}, id: :user_confirmation_sent_at, class: 'input-group-field small-2'
   .row
     = f.label :unconfirmed_email
-    = f. :unconfirmed_email, id: :user_unconfirmed_email
+    = f.email_field :unconfirmed_email, id: :user_unconfirmed_email
   .row
     = f.label :failed_attempts
     = f.number_field :failed_attempts, id: :user_failed_attempts
