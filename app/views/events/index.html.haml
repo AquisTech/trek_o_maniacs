@@ -1,0 +1,60 @@
+%h1
+  Events
+  = link_to 'Add New Event', 'javascript:void(0)', class: 'button primary float-right', data: {open: 'ajax-reveal', url: new_event_path}
+
+.table-scroll
+  %table.striped.hover.table-striped.stack
+    %thead
+      %tr
+        %th Id
+        %th Venue
+        %th Title
+        %th Start time
+        %th End time
+        %th Event leaders
+        %th Published
+        %th Short description
+        %th Description
+        %th Attractions
+        %th Cost
+        %th Inclusions
+        %th Exclusions
+        %th Payment details
+        %th Itinerary
+        %th Assembly point
+        %th Assembly time
+        %th Contact details
+        %th Disclaimer
+        %th Created at
+        %th Updated at
+        %th Actions
+
+    %tbody
+      - @events.each do |event|
+        %tr
+          %td= event.id
+          %td= event.venue.name
+          %td= event.title
+          %td= event.start_time
+          %td= event.end_time
+          %td= event.event_leaders
+          %td= event.published
+          %td= event.short_description
+          %td= event.description
+          %td= event.attractions
+          %td= event.cost
+          %td= event.inclusions
+          %td= event.exclusions
+          %td= event.payment_details
+          %td= event.itinerary
+          %td= event.assembly_point
+          %td= event.assembly_time
+          %td= event.contact_details
+          %td= event.disclaimer
+          %td= event.created_at
+          %td= event.updated_at
+          %td
+            .button-group
+              = link_to 'Show', 'javascript:void(0)', class: 'button success', data: {open: 'ajax-reveal', url: event_path(event)}
+              = link_to 'Edit', 'javascript:void(0)', class: 'button warning', data: {open: 'ajax-reveal', url: edit_event_path(event)}
+              = link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure you want to delete this Event?' }, class: 'button alert'

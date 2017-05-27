@@ -1,0 +1,66 @@
+.row
+  %strong Id:
+  = @event.id
+.row
+  %strong Venue:
+  = @event.venue.name
+.row
+  %strong Title:
+  = @event.title
+.row
+  %strong Start time:
+  = @event.start_time
+.row
+  %strong End time:
+  = @event.end_time
+.row
+  %strong Event leaders:
+  = @event.event_leaders
+.row
+  %strong Published:
+  = @event.published
+.row
+  %strong Short description:
+  = @event.short_description
+.row
+  %strong Description:
+  = @event.description
+.row
+  %strong Attractions:
+  = @event.attractions
+.row
+  %strong Cost:
+  = @event.cost
+.row
+  %strong Inclusions:
+  = @event.inclusions
+.row
+  %strong Exclusions:
+  = @event.exclusions
+.row
+  %strong Payment details:
+  = @event.payment_details
+.row
+  %strong Itinerary:
+  = @event.itinerary
+.row
+  %strong Assembly point:
+  = @event.assembly_point
+.row
+  %strong Assembly time:
+  = @event.assembly_time
+.row
+  %strong Contact details:
+  = @event.contact_details
+.row
+  %strong Disclaimer:
+  = @event.disclaimer
+.row
+  %strong Created at:
+  = @event.created_at
+.row
+  %strong Updated at:
+  = @event.updated_at
+.row
+  = link_to 'Edit', 'javascript:void(0)', class: 'button primary', data: {open: 'ajax-reveal', url: edit_event_path(@event)}
+  = link_to 'Back', events_path, class: 'button warning'
