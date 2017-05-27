@@ -1,0 +1,46 @@
+= form_with(model: address, remote: true) do |f|
+  - if address.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(address.errors.count, "error")} prohibited this address from being saved:"
+      %ul
+        - address.errors.full_messages.each do |message|
+          %li= message
+  .row
+    = f.label :user_id
+    = f.collection_select :user_id, User.all, :id, :name, id: :address_user_id
+  .row
+    = f.label :purpose
+    = f.text_field :purpose, id: :address_purpose
+  .row
+    = f.label :address_line_1
+    = f.text_field :address_line_1, id: :address_address_line_1
+  .row
+    = f.label :address_line_2
+    = f.text_field :address_line_2, id: :address_address_line_2
+  .row
+    = f.label :landmark
+    = f.text_field :landmark, id: :address_landmark
+  .row
+    = f.label :city
+    = f.text_field :city, id: :address_city
+  .row
+    = f.label :state
+    = f.text_field :state, id: :address_state
+  .row
+    = f.label :country
+    = f.text_field :country, id: :address_country
+  .row
+    = f.label :pincode
+    = f.text_field :pincode, id: :address_pincode
+  - if address.persisted?
+    .row
+      = f.label :created_at
+      .input-group
+        = f.datetime_select :created_at, {order: [:day, :month, :year], date_separator: ' / '}, id: :address_created_at, class: 'input-group-field small-2'
+    .row
+      = f.label :updated_at
+      .input-group
+        = f.datetime_select :updated_at, {order: [:day, :month, :year], date_separator: ' / '}, id: :address_updated_at, class: 'input-group-field small-2'
+  .row
+    = f.submit address.new_record? ? 'Create' : 'Update', class: 'button success'
+    = link_to 'Back', addresses_path, class: 'button warning'

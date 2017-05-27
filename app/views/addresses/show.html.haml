@@ -1,0 +1,39 @@
+.row
+  %strong Id:
+  = @address.id
+.row
+  %strong User:
+  = @address.user.name
+.row
+  %strong Purpose:
+  = @address.purpose
+.row
+  %strong Address line 1:
+  = @address.address_line_1
+.row
+  %strong Address line 2:
+  = @address.address_line_2
+.row
+  %strong Landmark:
+  = @address.landmark
+.row
+  %strong City:
+  = @address.city
+.row
+  %strong State:
+  = @address.state
+.row
+  %strong Country:
+  = @address.country
+.row
+  %strong Pincode:
+  = @address.pincode
+.row
+  %strong Created at:
+  = @address.created_at
+.row
+  %strong Updated at:
+  = @address.updated_at
+.row
+  = link_to 'Edit', 'javascript:void(0)', class: 'button primary', data: {open: 'ajax-reveal', url: edit_address_path(@address)}
+  = link_to 'Back', addresses_path, class: 'button warning'
