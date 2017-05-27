@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   ROLES = { 0 => 'guest', 1 => 'organizer', 2 => 'member', 3 => 'volunteer' }
 
+  has_one :profile
   has_many :addresses
   has_many :contacts
 
