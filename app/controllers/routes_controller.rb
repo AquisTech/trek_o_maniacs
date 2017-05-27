@@ -5,20 +5,6 @@ class RoutesController < ApplicationController
     @routes = Route.all
   end
 
-  def new
-    @route = Route.new
-    render layout: false
-  end
-
-  def create
-    @route = Route.new(route_params)
-    if @route.save
-      redirect_to routes_url, notice: 'Route was successfully created.'
-    else
-      render :new
-    end
-  end
-
   def edit
     render layout: false
   end

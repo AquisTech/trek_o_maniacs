@@ -5,20 +5,6 @@ class AddressesController < ApplicationController
     @addresses = Address.all
   end
 
-  def new
-    @address = Address.new
-    render layout: false
-  end
-
-  def create
-    @address = Address.new(address_params)
-    if @address.save
-      redirect_to addresses_url, notice: 'Address was successfully created.'
-    else
-      render :new
-    end
-  end
-
   def edit
     render layout: false
   end

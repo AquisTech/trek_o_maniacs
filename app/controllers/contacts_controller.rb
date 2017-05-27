@@ -5,20 +5,6 @@ class ContactsController < ApplicationController
     @contacts = Contact.all
   end
 
-  def new
-    @contact = Contact.new
-    render layout: false
-  end
-
-  def create
-    @contact = Contact.new(contact_params)
-    if @contact.save
-      redirect_to contacts_url, notice: 'Contact was successfully created.'
-    else
-      render :new
-    end
-  end
-
   def edit
     render layout: false
   end

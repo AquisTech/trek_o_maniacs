@@ -5,20 +5,6 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def new
-    @user = User.new
-    render layout: false
-  end
-
-  def create
-    @user = User.new(user_params)
-    if @user.save
-      redirect_to users_url, notice: 'User was successfully created.'
-    else
-      render :new
-    end
-  end
-
   def edit
     render layout: false
   end
