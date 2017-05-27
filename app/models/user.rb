@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   has_one :profile
   has_many :addresses
-  has_many :contacts
+  has_many :contacts, as: :resource
 
   # setter
   def role=(val)

@@ -1,5 +1,5 @@
 class Contact < ApplicationRecord
-  belongs_to :user
+  belongs_to :resource, polymorphic: true
 
   contact_number_attributes :number
 end
