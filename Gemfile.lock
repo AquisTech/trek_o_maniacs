@@ -128,6 +128,9 @@ GEM
       haml (>= 4.0.6, < 5.0)
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
+    has_contact_number (0.1.1)
+      iso_country_codes
+      phony_rails
     high_voltage (3.0.0)
     html2haml (2.1.0)
       erubis (~> 2.7.0)
@@ -135,6 +138,7 @@ GEM
       nokogiri (>= 1.6.0)
       ruby_parser (~> 3.5)
     i18n (0.8.1)
+    iso_country_codes (0.7.7)
     jbuilder (2.6.4)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2)
@@ -161,6 +165,10 @@ GEM
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
+    phony (2.15.44)
+    phony_rails (0.14.5)
+      activesupport (>= 3.0)
+      phony (~> 2.15)
     public_suffix (2.0.5)
     puma (3.8.2)
     rack (2.0.3)
@@ -236,6 +244,7 @@ DEPENDENCIES
   devise
   foundation-rails
   haml-rails
+  has_contact_number
   high_voltage
   jbuilder (~> 2.5)
   jquery-rails
