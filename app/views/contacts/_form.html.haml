@@ -10,7 +10,7 @@
     = f.text_field :resource_type, id: :contact_resource_type
   .row
     = f.label :resource_id
-    = f.collection_select :resource_id, Resource.all, :id, :name, id: :contact_resource_id
+    = f.text_field :resource_id, id: :contact_resource_id
   .row
     = f.label :purpose
     = f.text_field :purpose, id: :contact_purpose
