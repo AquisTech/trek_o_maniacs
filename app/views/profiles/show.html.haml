@@ -1,0 +1,27 @@
+.row
+  %strong Id:
+  = @profile.id
+.row
+  %strong User:
+  = @profile.user.name
+.row
+  %strong First name:
+  = @profile.first_name
+.row
+  %strong Last name:
+  = @profile.last_name
+.row
+  %strong Membership started on:
+  = @profile.membership_started_on
+.row
+  %strong Social links:
+  = @profile.social_links
+.row
+  %strong Created at:
+  = @profile.created_at
+.row
+  %strong Updated at:
+  = @profile.updated_at
+.row
+  = link_to 'Edit', 'javascript:void(0)', class: 'button primary', data: {open: 'ajax-reveal', url: edit_profile_path(@profile)}
+  = link_to 'Back', profiles_path, class: 'button warning'
