@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   ROLES = { 0 => 'guest', 1 => 'organizer', 2 => 'member', 3 => 'volunteer' }
 
+  has_many :addresses
+
   # setter
   def role=(val)
     self[:role] = ROLES.key(val)
