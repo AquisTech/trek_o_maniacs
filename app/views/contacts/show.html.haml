@@ -1,0 +1,27 @@
+.row
+  %strong Id:
+  = @contact.id
+.row
+  %strong Resource type:
+  = @contact.resource_type
+.row
+  %strong Resource:
+  = @contact.resource.name
+.row
+  %strong Purpose:
+  = @contact.purpose
+.row
+  %strong Name:
+  = @contact.name
+.row
+  %strong Number:
+  = @contact.number
+.row
+  %strong Created at:
+  = @contact.created_at
+.row
+  %strong Updated at:
+  = @contact.updated_at
+.row
+  = link_to 'Edit', 'javascript:void(0)', class: 'button primary', data: {open: 'ajax-reveal', url: edit_contact_path(@contact)}
+  = link_to 'Back', contacts_path, class: 'button warning'
