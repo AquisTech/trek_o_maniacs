@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2017_05_27_081235) do
+ActiveRecord::Schema.define(version: 2017_05_27_085028) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer "user_id"
@@ -36,6 +36,30 @@ ActiveRecord::Schema.define(version: 2017_05_27_081235) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["resource_type", "resource_id"], name: "index_contacts_on_resource_type_and_resource_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.integer "venue_id"
+    t.string "title"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.text "event_leaders"
+    t.boolean "published", default: false
+    t.text "short_description"
+    t.text "description"
+    t.text "attractions"
+    t.integer "cost"
+    t.text "inclusions"
+    t.text "exclusions"
+    t.text "payment_details"
+    t.text "itinerary"
+    t.string "assembly_point"
+    t.datetime "assembly_time"
+    t.text "contact_details"
+    t.text "disclaimer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["venue_id"], name: "index_events_on_venue_id"
   end
 
   create_table "profiles", force: :cascade do |t|
