@@ -1,0 +1,36 @@
+%h1
+  Venues
+  = link_to 'Add New Venue', 'javascript:void(0)', class: 'button primary float-right', data: {open: 'ajax-reveal', url: new_venue_path}
+
+.table-scroll
+  %table.striped.hover.table-striped.stack
+    %thead
+      %tr
+        %th Id
+        %th Name
+        %th Purpose
+        %th Grade
+        %th Region
+        %th Description
+        %th Attractions
+        %th Created at
+        %th Updated at
+        %th Actions
+
+    %tbody
+      - @venues.each do |venue|
+        %tr
+          %td= venue.id
+          %td= venue.name
+          %td= venue.purpose
+          %td= venue.grade
+          %td= venue.region
+          %td= venue.description
+          %td= venue.attractions
+          %td= venue.created_at
+          %td= venue.updated_at
+          %td
+            .button-group
+              = link_to 'Show', 'javascript:void(0)', class: 'button success', data: {open: 'ajax-reveal', url: venue_path(venue)}
+              = link_to 'Edit', 'javascript:void(0)', class: 'button warning', data: {open: 'ajax-reveal', url: edit_venue_path(venue)}
+              = link_to 'Delete', venue, method: :delete, data: { confirm: 'Are you sure you want to delete this Venue?' }, class: 'button alert'

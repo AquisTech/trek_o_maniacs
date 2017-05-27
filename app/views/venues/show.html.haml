@@ -1,0 +1,30 @@
+.row
+  %strong Id:
+  = @venue.id
+.row
+  %strong Name:
+  = @venue.name
+.row
+  %strong Purpose:
+  = @venue.purpose
+.row
+  %strong Grade:
+  = @venue.grade
+.row
+  %strong Region:
+  = @venue.region
+.row
+  %strong Description:
+  = @venue.description
+.row
+  %strong Attractions:
+  = @venue.attractions
+.row
+  %strong Created at:
+  = @venue.created_at
+.row
+  %strong Updated at:
+  = @venue.updated_at
+.row
+  = link_to 'Edit', 'javascript:void(0)', class: 'button primary', data: {open: 'ajax-reveal', url: edit_venue_path(@venue)}
+  = link_to 'Back', venues_path, class: 'button warning'
