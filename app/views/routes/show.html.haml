@@ -1,0 +1,27 @@
+.row
+  %strong Id:
+  = @route.id
+.row
+  %strong Venue:
+  = @route.venue.name
+.row
+  %strong Name:
+  = @route.name
+.row
+  %strong Description:
+  = @route.description
+.row
+  %strong Distance:
+  = @route.distance
+.row
+  %strong Modes of transport:
+  = @route.modes_of_transport
+.row
+  %strong Created at:
+  = @route.created_at
+.row
+  %strong Updated at:
+  = @route.updated_at
+.row
+  = link_to 'Edit', 'javascript:void(0)', class: 'button primary', data: {open: 'ajax-reveal', url: edit_route_path(@route)}
+  = link_to 'Back', routes_path, class: 'button warning'

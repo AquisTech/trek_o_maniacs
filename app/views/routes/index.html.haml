@@ -1,0 +1,34 @@
+%h1
+  Routes
+  = link_to 'Add New Route', 'javascript:void(0)', class: 'button primary float-right', data: {open: 'ajax-reveal', url: new_route_path}
+
+.table-scroll
+  %table.striped.hover.table-striped.stack
+    %thead
+      %tr
+        %th Id
+        %th Venue
+        %th Name
+        %th Description
+        %th Distance
+        %th Modes of transport
+        %th Created at
+        %th Updated at
+        %th Actions
+
+    %tbody
+      - @routes.each do |route|
+        %tr
+          %td= route.id
+          %td= route.venue.name
+          %td= route.name
+          %td= route.description
+          %td= route.distance
+          %td= route.modes_of_transport
+          %td= route.created_at
+          %td= route.updated_at
+          %td
+            .button-group
+              = link_to 'Show', 'javascript:void(0)', class: 'button success', data: {open: 'ajax-reveal', url: route_path(route)}
+              = link_to 'Edit', 'javascript:void(0)', class: 'button warning', data: {open: 'ajax-reveal', url: edit_route_path(route)}
+              = link_to 'Delete', route, method: :delete, data: { confirm: 'Are you sure you want to delete this Route?' }, class: 'button alert'
