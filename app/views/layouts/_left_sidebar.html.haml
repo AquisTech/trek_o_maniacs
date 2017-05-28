@@ -1,5 +1,17 @@
-#offCanvasLeft.off-canvas.position-left{'data-off-canvas': '', 'data-transition': 'overlap'}
-  %ul.menu.vertical
-    - (ActiveRecord::Base.connection.tables - ['schema_migrations', 'ar_internal_metadata']).each do |model|
+- if user_signed_in?
+  #offCanvasLeft.off-canvas.position-left{'data-off-canvas': '', 'data-transition': 'overlap'}
+    %ul.menu.vertical
+      %li.menu-text
+        = 'Hi, '
+        = current_user.username
       %li
-        = link_to model.titleize, send("#{model}_path")
+        = link_to 'My Account', my_account_users_path
+      %li
+        = link_to 'Logout', destroy_user_session_path, method: :delete
+      - if current_user.organizer?
+        %li.menu-text Admin Menu
+        %li
+          %ul.menu.vertical.nested
+            - (ActiveRecord::Base.connection.tables - ['schema_migrations', 'ar_internal_metadata']).each do |model|
+              %li
+                = link_to model.titleize, send("#{model}_path")
