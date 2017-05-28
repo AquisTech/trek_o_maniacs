@@ -1,0 +1,11 @@
+#error_explanation
+.row
+  .columns.medium-6
+    %ul.accordion{ data: { accordion: true, 'deep-link': 'true', 'deep-link-smudge': 'true', 'allow-all-closed': 'true' } }
+      %li.accordion-item{ data: { 'accordion-item': true } }
+        %a.accordion-title{ href: '#update_username' }
+          %h6 Update Username
+        .accordion-content{ data: { 'tab-content': true } }
+          = form_with model: current_user, url: update_username_users_path do |f|
+            = f.text_field :username
+            = f.submit 'Change Username', class: 'button success'

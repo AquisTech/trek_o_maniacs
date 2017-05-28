@@ -26,12 +26,34 @@ class UsersController < ApplicationController
     redirect_to users_url, notice: 'User was successfully destroyed.'
   end
 
+  def my_account
+  end
+
+  def update_username
+    if current_user.update(user_params)
+      redirect_to my_account_users_url, notice: 'Username was successfully saved.'
+    else
+      render :errors
+    end
+  end
+
   private
     def set_user
       @user = User.find(params[:id])
     end
 
     def user_params
-      params.require(:user).permit(:email, :encrypted_password, :reset_password_token, :reset_password_sent_at, :remember_created_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :confirmation_token, :confirmed_at, :confirmation_sent_at, :unconfirmed_email, :failed_attempts, :unlock_token, :locked_at)
+      attributes = case action_name
+      when 'update'
+        [
+          :email, :encrypted_password, :reset_password_token, :reset_password_sent_at,
+          :remember_created_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at,
+          :current_sign_in_ip, :last_sign_in_ip, :confirmation_token, :confirmed_at,
+          :confirmation_sent_at, :unconfirmed_email, :failed_attempts, :unlock_token, :locked_at
+        ]
+      when 'update_username'
+        [:username]
+      end
+      params.require(:user).permit(*attributes)
     end
 end

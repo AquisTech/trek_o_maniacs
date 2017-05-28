@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :addresses
   has_many :contacts, as: :resource
 
+  validates :username, presence: true, uniqueness: { case_sensitive: false }
   # setter
   def role=(val)
     self[:role] = ROLES.key(val)
