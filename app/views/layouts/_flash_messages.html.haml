@@ -1,0 +1,5 @@
+- flash.to_hash.except('timedout').each do |key, message|
+  .callout{class: "success #{key}", 'data-closable': 'slide-out-right'}
+    = message
+    %button.close-button{'aria-label': "Dismiss alert", type: :button, data: {close: true}}
+      %span{'aria-hidden': true} &times;
