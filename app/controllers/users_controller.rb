@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     if current_user.update(user_params)
       redirect_to my_account_users_url, notice: 'Username was successfully saved.'
     else
-      render :errors
+      render 'layouts/errors', locals: { object: current_user }
     end
   end
 
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     if current_user.update(user_params)
       redirect_to my_account_users_url, notice: 'Password was successfully saved.'
     else
-      render :errors
+      render 'layouts/errors', locals: { object: current_user }
     end
   end
 

@@ -1,6 +1,0 @@
-<%- if current_user.errors.any? %>
-  var errors = '<ul>'
-  errors += "<%= current_user.errors.full_messages.map { |msg| "<li>#{msg}</li>" }.join.html_safe %>"
-  errors += '</ul>'
-<%- end %>
-$('#error_explanation').html(errors)

@@ -1,0 +1,2 @@
+var errors = "<ul><%= object.errors.full_messages.map { |msg| "<li>#{msg}</li>" }.join.html_safe %></ul>"
+$('#error_explanation').html(errors)
