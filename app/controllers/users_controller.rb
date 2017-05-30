@@ -37,6 +37,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def update_password
+    current_user.validate_current_password = true
+    if current_user.update(user_params)
+      redirect_to my_account_users_url, notice: 'Password was successfully saved.'
+    else
+      render :errors
+    end
+  end
+
   private
     def set_user
       @user = User.find(params[:id])
@@ -53,6 +62,8 @@ class UsersController < ApplicationController
         ]
       when 'update_username'
         [:username]
+      when 'update_password'
+        [:current_password, :password, :password_confimation]
       end
       params.require(:user).permit(*attributes)
     end

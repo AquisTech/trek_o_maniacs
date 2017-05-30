@@ -9,3 +9,15 @@
           = form_with model: current_user, url: update_username_users_path do |f|
             = f.text_field :username
             = f.submit 'Change Username', class: 'button success'
+      %li.accordion-item{ data: { 'accordion-item': true } }
+        %a.accordion-title{ href: '#update_password' }
+          %h6 Update Password
+        .accordion-content{ data: { 'tab-content': true } }
+          = form_with model: current_user, url: update_password_users_path do |f|
+            = f.label :current_password
+            = f.password_field :current_password
+            = f.label :password
+            = f.password_field :password
+            = f.label :password_confirmation
+            = f.password_field :password_confirmation
+            = f.submit 'Change Password', class: 'button success'
