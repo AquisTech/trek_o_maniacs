@@ -27,6 +27,7 @@ class UsersController < ApplicationController
   end
 
   def my_account
+    @profile = current_user.profile || current_user.build_profile
   end
 
   def update_username

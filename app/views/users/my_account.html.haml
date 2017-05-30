@@ -22,3 +22,16 @@
             = f.label :password_confirmation
             = f.password_field :password_confirmation
             = f.submit 'Change Password', class: 'button success'
+
+      %li.accordion-item{ data: { 'accordion-item': true } }
+        %a.accordion-title{ href: '#update_personal_details' }
+          %h6 Update Personal Details
+        .accordion-content{ data: { 'tab-content': true } }
+          = form_with model: @profile do |f|
+            = f.label :first_name
+            = f.text_field :first_name
+            = f.label :last_name
+            = f.text_field :last_name
+            = f.label :social_links
+            = f.text_area :social_links
+            = f.submit 'Save Personal Details', class: 'button success'
