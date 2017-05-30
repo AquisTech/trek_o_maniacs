@@ -3,6 +3,7 @@
     %button.menu-icon{"data-open" => "offCanvasLeft", :type => "button"}
     %span.title-bar-title Trek-O-Maniacs
   .title-bar-right
-    = link_to 'Create Account', new_user_registration_path
-    = link_to 'Login', new_user_session_path
+    - unless user_signed_in?
+      = link_to 'Create Account', new_user_registration_path
+      = link_to 'Login', new_user_session_path
 
