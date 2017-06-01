@@ -38,15 +38,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def update_password
-    current_user.validate_current_password = true
-    if current_user.update(user_params)
-      redirect_to my_account_users_url, notice: 'Password was successfully saved.'
-    else
-      render_errors_for(current_user)
-    end
-  end
-
   private
     def set_user
       @user = User.find(params[:id])

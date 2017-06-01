@@ -15,7 +15,8 @@
         %a.accordion-title{ href: '#update_password' }
           %h6 Update Password
         .accordion-content{ data: { 'tab-content': true } }
-          = form_with model: current_user, url: update_password_users_path do |f|
+          = form_with model: current_user, url: registration_path(current_user), :method => :put do |f|
+            = f.hidden_field :email, value: current_user.email
             = f.label :current_password
             = f.password_field :current_password
             = f.label :password
@@ -23,6 +24,17 @@
             = f.label :password_confirmation
             = f.password_field :password_confirmation
             = f.submit 'Change Password', class: 'button success'
+
+      %li.accordion-item{ data: { 'accordion-item': true } }
+        %a.accordion-title{ href: '#update_email' }
+          %h6 Update Email
+        .accordion-content{ data: { 'tab-content': true } }
+          = form_with model: current_user, url: registration_path(current_user), :method => :put do |f|
+            = f.label :email
+            = f.email_field :email
+            = f.label :current_password
+            = f.password_field :current_password
+            = f.submit 'Change Email', class: 'button success'
 
       %li.accordion-item{ data: { 'accordion-item': true } }
         %a.accordion-title{ href: '#update_personal_details' }

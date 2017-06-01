@@ -7,14 +7,12 @@ class User < ApplicationRecord
   ROLES = { 0 => 'guest', 1 => 'organizer', 2 => 'member', 3 => 'volunteer' }
 
   alias_attribute :name, :username
-  attr_accessor :current_password, :validate_current_password
 
   has_one :profile
   has_many :addresses
   has_many :contacts, as: :resource
 
   validates :username, presence: true, uniqueness: { case_sensitive: false }
-  validates :current_password, presence: true, match_existing_password: true, if: :validate_current_password
 
   # setter
   def role=(val)
