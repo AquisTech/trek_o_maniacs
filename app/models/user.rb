@@ -16,12 +16,12 @@ class User < ApplicationRecord
 
   # setter
   def role=(val)
-    self[:role] = ROLES.key(val)
+    super(ROLES.key(val))
   end
 
   # getter
   def role
-    ROLES[self[:role]]
+    ROLES[super]
   end
 
   ROLES.each do |id, name|
