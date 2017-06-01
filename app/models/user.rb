@@ -14,7 +14,6 @@ class User < ApplicationRecord
   has_many :contacts, as: :resource
 
   validates :username, presence: true, uniqueness: { case_sensitive: false }
-  validates :email, presence: true, uniqueness: { case_sensitive: false }
   validates :current_password, presence: true, match_existing_password: true, if: :validate_current_password
 
   # setter
