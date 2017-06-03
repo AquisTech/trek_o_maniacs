@@ -7,6 +7,7 @@ class VenuesController < ApplicationController
 
   def new
     @venue = Venue.new
+    @venue.routes.build
     render layout: false
   end
 
@@ -46,6 +47,7 @@ class VenuesController < ApplicationController
     end
 
     def venue_params
-      params.require(:venue).permit(:name, :purpose, :grade, :region, :description, :attractions)
+      params.require(:venue).permit(:name, :purpose, :grade, :region, :description, :attractions,
+        routes_attributes: [:id, :name, :description, :distance, :modes_of_transport, :_destroy])
     end
 end

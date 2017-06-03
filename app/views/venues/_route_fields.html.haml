@@ -1,0 +1,13 @@
+%fieldset.fieldset
+  %legend Route Details
+  = f.label :name
+  = f.text_field :name
+  = f.label :description
+  = f.text_area :description
+  = f.label :distance
+  .input-group
+    = f.number_field :distance, class: 'input-group-field'
+    %span.input-group-label km
+  = f.label :modes_of_transport
+  = f.text_area :modes_of_transport
+  = f.link_to_remove 'Remove this Route', class: 'button alert'

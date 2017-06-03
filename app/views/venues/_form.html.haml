@@ -1,4 +1,4 @@
-= form_with(model: venue, remote: true) do |f|
+= nested_form_for venue do |f|
   - if venue.errors.any?
     #error_explanation
       %h2= "#{pluralize(venue.errors.count, "error")} prohibited this venue from being saved:"
@@ -24,6 +24,9 @@
     = f.label :attractions
     = f.text_area :attractions, id: :venue_attractions
     %p.help-text Enter each attraction on new line
+  .row
+    = f.fields_for :routes
+    = f.link_to_add 'Add more Route', :routes, class: 'button'
   - if venue.persisted?
     .row
       = f.label :created_at
