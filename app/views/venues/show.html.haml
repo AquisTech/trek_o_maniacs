@@ -18,7 +18,7 @@
   = @venue.description
 .row
   %strong Attractions:
-  = @venue.attractions
+  = "<ul>#{@venue.attractions.map { |a| "<li>#{a}</li>" }.join}</ul>".html_safe
 .row
   %strong Created at:
   = @venue.created_at

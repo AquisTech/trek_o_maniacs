@@ -10,19 +10,20 @@
     = f.text_field :name, id: :venue_name
   .row
     = f.label :purpose
-    = f.text_field :purpose, id: :venue_purpose
+    = f.select :purpose, ['Trek', 'Trail', 'Jungle Safari', 'Ghaat', 'Valley'], id: :venue_purpose
   .row
     = f.label :grade
-    = f.text_field :grade, id: :venue_grade
+    = f.select :grade, ['Easy', 'Medium', 'Difficult', 'Extreme'], id: :venue_grade
   .row
     = f.label :region
-    = f.text_field :region, id: :venue_region
+    = f.select :region, options_for_region, id: :venue_region
   .row
     = f.label :description
     = f.text_area :description, id: :venue_description
   .row
     = f.label :attractions
     = f.text_area :attractions, id: :venue_attractions
+    %p.help-text Enter each attraction on new line
   - if venue.persisted?
     .row
       = f.label :created_at

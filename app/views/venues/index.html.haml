@@ -26,7 +26,7 @@
           %td= venue.grade
           %td= venue.region
           %td= venue.description
-          %td= venue.attractions
+          %td= "<ul>#{venue.attractions.map { |a| "<li>#{a}</li>" }.join}</ul>".html_safe
           %td= venue.created_at
           %td= venue.updated_at
           %td
