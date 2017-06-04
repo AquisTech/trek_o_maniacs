@@ -25,8 +25,10 @@
     = f.text_area :attractions, id: :venue_attractions
     %p.help-text Enter each attraction on new line
   .row
-    = f.fields_for :routes
-    = f.link_to_add 'Add more Route', :routes, class: 'button'
+    %fieldset.fieldset
+      %legend Route Details
+      = f.fields_for :routes
+      = f.link_to_add 'Add more Route', :routes, class: 'button'
   - if venue.persisted?
     .row
       = f.label :created_at
