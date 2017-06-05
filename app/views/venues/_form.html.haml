@@ -29,6 +29,11 @@
       %legend Route Details
       = f.fields_for :routes
       = f.link_to_add 'Add more Route', :routes, class: 'button'
+  .row
+    %fieldset.fieldset
+      %legend Contact Details
+      = f.fields_for :contacts
+      = f.link_to_add 'Add more Contact', :contacts, class: 'button'
   - if venue.persisted?
     .row
       = f.label :created_at

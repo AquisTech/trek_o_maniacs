@@ -1,0 +1,11 @@
+= f.label :purpose
+= f.select :purpose, options_for_contact_purposes
+= f.label :name
+= f.text_field :name
+= f.label :number
+.input-group
+  %label.input-group-label +91
+  = f.telephone_field :number_without_isd_code, class: 'input-group-field'
+  = f.hidden_field :number_isd_code, value: '0091'
+= f.link_to_remove 'Remove this Contact', class: 'button alert'
+%hr
