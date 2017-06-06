@@ -4,7 +4,7 @@ class CreateContacts < ActiveRecord::Migration[5.2]
       t.belongs_to :resource, polymorphic: true
       t.string :purpose
       t.string :name
-      t.integer :number
+      t.string :number
 
       t.timestamps
     end

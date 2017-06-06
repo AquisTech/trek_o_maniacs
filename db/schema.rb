@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2017_05_27_085028) do
     t.integer "resource_id"
     t.string "purpose"
     t.string "name"
-    t.integer "number"
+    t.string "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["resource_type", "resource_id"], name: "index_contacts_on_resource_type_and_resource_id"
