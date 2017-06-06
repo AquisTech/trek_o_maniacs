@@ -8,9 +8,9 @@ class User < ApplicationRecord
 
   alias_attribute :name, :username
 
-  has_one :profile
-  has_many :addresses
-  has_many :contacts, as: :resource
+  has_one :profile, inverse_of: :user
+  has_many :addresses, inverse_of: :user
+  has_many :contacts, as: :resource, inverse_of: :resource
 
   validates :username, presence: true, uniqueness: { case_sensitive: false }
 

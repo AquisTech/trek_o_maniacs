@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  belongs_to :venue
+  belongs_to :venue, inverse_of: :events
   serialize :attractions
   serialize :inclusions
   serialize :exclusions
