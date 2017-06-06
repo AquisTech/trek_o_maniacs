@@ -5,10 +5,10 @@
     = f.text_field :name, id: :venue_name
   .row
     = f.label :purpose
-    = f.select :purpose, ['Trek', 'Trail', 'Jungle Safari', 'Ghaat', 'Valley'], id: :venue_purpose
+    = f.select :purpose, options_for_purpose, id: :venue_purpose
   .row
     = f.label :grade
-    = f.select :grade, ['Easy', 'Medium', 'Difficult', 'Extreme'], id: :venue_grade
+    = f.select :grade, options_for_grade, id: :venue_grade
   .row
     = f.label :region
     = f.select :region, options_for_region, id: :venue_region
