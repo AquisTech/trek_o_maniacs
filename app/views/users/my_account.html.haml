@@ -48,3 +48,23 @@
             = f.label :social_links
             = f.text_area :social_links
             = f.submit 'Save Personal Details', class: 'button success'
+
+  .columns.medium-6
+    %ul.accordion{ data: { accordion: true, 'deep-link': 'true', 'deep-link-smudge': 'true', 'allow-all-closed': 'true' } }
+      %li.accordion-item{ data: { 'accordion-item': true } }
+        %a.accordion-title{ href: '#update_contact' }
+          %h6 Update Primary Phone Number
+        .accordion-content{ data: { 'tab-content': true } }
+
+      %li.accordion-item{ data: { 'accordion-item': true } }
+        %a.accordion-title{ href: '#score' }
+          %h6 Trek-O-Maniac Points
+        .accordion-content{ data: { 'tab-content': true } }
+
+      %li.accordion-item{ data: { 'accordion-item': true } }
+        %a.accordion-title{ href: '#login_info' }
+          %h6 Login info
+        .accordion-content{ data: { 'tab-content': true } }
+          = "Currently signed in at #{current_user.current_sign_in_at} from IP #{current_user.current_sign_in_ip}"
+          = # Make provision to store devise or browser info
+          = "Last signed in at #{current_user.last_sign_in_at} from IP #{current_user.last_sign_in_ip}"
