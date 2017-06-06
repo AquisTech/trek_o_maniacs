@@ -17,7 +17,7 @@ class VenuesController < ApplicationController
     if @venue.save
       redirect_to venues_url, notice: 'Venue was successfully created.'
     else
-      render :new
+      render_errors_for(@venue)
     end
   end
 
@@ -29,7 +29,7 @@ class VenuesController < ApplicationController
     if @venue.update(venue_params)
       redirect_to venues_url, notice: 'Venue was successfully updated.'
     else
-      render :edit
+      render_errors_for(@venue)
     end
   end
 
