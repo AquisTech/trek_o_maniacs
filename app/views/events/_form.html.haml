@@ -36,7 +36,7 @@
     = f.text_area :attractions, id: :event_attractions
   .row
     = f.label :cost
-    = f.number_field :cost, id: :event_cost
+    = f.amount_field :cost, id: :event_cost, currency: '&#8377;'
   .row
     = f.label :inclusions
     = f.text_area :inclusions, id: :event_inclusions
