@@ -11,4 +11,9 @@ class ActionView::Helpers::FormBuilder
       number_field(method, options)
     end.html_safe
   end
+
+  def text_area_with_hint(method, options={})
+    raise 'Provide hint in options' if options[:hint].blank?
+    (text_area(method, options) + content_tag(:p, options[:hint], class: 'help-text')).html_safe
+  end
 end
