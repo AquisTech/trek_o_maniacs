@@ -6,13 +6,14 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.datetime :start_time
       t.datetime :end_time
       t.text :event_leaders
-      t.boolean :published, default: false
+      t.string :status
       t.text :short_description
       t.text :description
       t.text :attractions
       t.integer :cost
       t.text :inclusions
       t.text :exclusions
+      t.text :things_to_carry
       t.text :payment_details
       t.text :itinerary
       t.string :assembly_point

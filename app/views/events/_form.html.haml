@@ -20,11 +20,10 @@
     .input-group
       = f.datetime_select :end_time, {order: [:day, :month, :year], date_separator: ' / '}, id: :event_end_time, class: 'input-group-field small-2'
   .row
-    = f.label :event_leaders
-    = f.text_area :event_leaders, id: :event_event_leaders
-  .row
-    = f.label :published
-    = f.check_box :published, id: :event_published
+    %fieldset.fieldset
+      %legend Event Leaders
+      = f.array_field :event_leaders, id: :event_event_leaders
+      = f.link_to_add_array_field 'Add more Event Leader'
   .row
     = f.label :short_description
     = f.text_area :short_description, id: :event_short_description
@@ -32,17 +31,28 @@
     = f.label :description
     = f.text_area :description, id: :event_description
   .row
-    = f.label :attractions
-    = f.text_area :attractions, id: :event_attractions
+    %fieldset.fieldset
+      %legend Attractions
+      = f.array_field :attractions, id: :event_attractions
+      = f.link_to_add_array_field 'Add more Attraction'
   .row
     = f.label :cost
     = f.amount_field :cost, id: :event_cost, currency: '&#8377;'
   .row
-    = f.label :inclusions
-    = f.text_area :inclusions, id: :event_inclusions
+    %fieldset.fieldset
+      %legend Inclusions
+      = f.array_field :inclusions, id: :event_inclusions
+      = f.link_to_add_array_field 'Add more Inclusion'
   .row
-    = f.label :exclusions
-    = f.text_area :exclusions, id: :event_exclusions
+    %fieldset.fieldset
+      %legend Exclusions
+      = f.array_field :exclusions, id: :event_exclusions
+      = f.link_to_add_array_field 'Add more Exclusion'
+  .row
+    %fieldset.fieldset
+      %legend Things To Carry
+      = f.array_field :things_to_carry
+      = f.link_to_add_array_field 'Add more Things to Carry'
   .row
     = f.label :payment_details
     = f.text_area :payment_details, id: :event_payment_details
@@ -57,11 +67,15 @@
     .input-group
       = f.datetime_select :assembly_time, {order: [:day, :month, :year], date_separator: ' / '}, id: :event_assembly_time, class: 'input-group-field small-2'
   .row
-    = f.label :contact_details
-    = f.text_area :contact_details, id: :event_contact_details
+    %fieldset.fieldset
+      %legend Contact Details
+      = f.array_field :contact_details, id: :event_contact_details
+      = f.link_to_add_array_field 'Add more Contact'
   .row
-    = f.label :disclaimer
-    = f.text_area :disclaimer, id: :event_disclaimer
+    %fieldset.fieldset
+      %legend Disclaimer
+      = f.array_field :disclaimer, id: :event_disclaimer
+      = f.link_to_add_array_field 'Add more Disclaimer Point'
   - if event.persisted?
     .row
       = f.label :created_at

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2017_05_27_085028) do
+ActiveRecord::Schema.define(version: 2017_05_27_085029) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer "user_id"
@@ -44,13 +44,14 @@ ActiveRecord::Schema.define(version: 2017_05_27_085028) do
     t.datetime "start_time"
     t.datetime "end_time"
     t.text "event_leaders"
-    t.boolean "published", default: false
+    t.string "status"
     t.text "short_description"
     t.text "description"
     t.text "attractions"
     t.integer "cost"
     t.text "inclusions"
     t.text "exclusions"
+    t.text "things_to_carry"
     t.text "payment_details"
     t.text "itinerary"
     t.string "assembly_point"
