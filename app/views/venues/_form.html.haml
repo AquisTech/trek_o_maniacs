@@ -19,7 +19,7 @@
     %fieldset.fieldset
       %legend Attractions
       = f.array_field :attractions, id: :venue_attractions
-      = link_to 'Add More Attraction', 'javascript:void(0)', class: 'button clone-array-field'
+      = f.link_to_add_array_field 'Add More Attraction'
   .row
     %fieldset.fieldset
       %legend Route Details

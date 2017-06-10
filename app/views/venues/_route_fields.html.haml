@@ -13,6 +13,7 @@
   = f.number_field :distance, class: 'input-group-field'
   %span.input-group-label km
 = f.label :modes_of_transport
-= f.text_area :modes_of_transport
+= f.array_field :modes_of_transport
+= f.link_to_add_array_field 'Add more Mode of Transport'
 = f.link_to_remove 'Remove this Route', class: 'button alert'
 %hr
