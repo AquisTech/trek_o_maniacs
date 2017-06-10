@@ -6,9 +6,4 @@ class Venue < ApplicationRecord
   accepts_nested_attributes_for :contacts, allow_destroy: true
 
   serialize :attractions
-
-  # setter
-  def attractions=(val)
-    super(val.split("\n").map(&:strip))
-  end
 end

@@ -16,9 +16,10 @@
     = f.label :description
     = f.text_area :description, id: :venue_description
   .row
-    = f.label :attractions
-    = f.text_area :attractions, id: :venue_attractions
-    %p.help-text Enter each attraction on new line
+    %fieldset.fieldset
+      %legend Attractions
+      = f.array_field :attractions, id: :venue_attractions
+      = link_to 'Add More Attraction', 'javascript:void(0)', class: 'button clone-array-field'
   .row
     %fieldset.fieldset
       %legend Route Details
