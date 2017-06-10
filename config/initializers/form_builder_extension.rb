@@ -15,7 +15,7 @@ class ActionView::Helpers::FormBuilder
     (text_area(method, options) + content_tag(:p, options[:hint], class: 'help-text')).html_safe
   end
 
-  def array_field(method, options)
+  def array_field(method, options={})
     if self.object.send(method).blank?
       build_array_field(method, options)
     else
