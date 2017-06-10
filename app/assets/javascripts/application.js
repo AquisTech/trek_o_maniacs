@@ -32,4 +32,16 @@ $(document).on('turbolinks:load', function() {
       }
     });
   });
+  $('body').on('click', '.delete-array-field', function(e) {
+    if($(this).parents('.fieldset').find('.input-group').length == 1) {
+      alert('Cannot remove all the fields');
+    } else {
+      $(this).parents('.input-group').remove();
+    }
+  });
+  $('body').on('click', '.clone-array-field', function(e) {
+    var clonedField = $(this).prev('.input-group').clone();
+    clonedField.find('input').val(null);
+    $(this).before(clonedField);
+  });
 });
