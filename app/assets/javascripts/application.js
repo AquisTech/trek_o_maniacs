@@ -43,5 +43,6 @@ $(document).on('turbolinks:load', function() {
     var clonedField = $(this).prev('.input-group').clone();
     clonedField.find('input').val(null);
     $(this).before(clonedField);
+    $(this).prev('.input-group').find('input').focus();
   });
 });
