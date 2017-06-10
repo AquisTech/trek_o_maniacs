@@ -15,7 +15,8 @@
       = f.datetime_select :membership_started_on, {order: [:day, :month, :year], date_separator: ' / '}, id: :profile_membership_started_on, class: 'input-group-field small-2'
   .row
     = f.label :social_links
-    = f.text_area :social_links, id: :profile_social_links
+    = f.array_field :social_links, id: :profile_social_links
+    = f.link_to_add_array_field 'Add more Social Links'
   - if profile.persisted?
     .row
       = f.label :created_at

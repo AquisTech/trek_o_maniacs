@@ -41,7 +41,7 @@ class ProfilesController < ApplicationController
     end
 
     def profile_params
-      params.require(:profile).permit(:user_id, :first_name, :last_name, :membership_started_on, :social_links)
+      params.require(:profile).permit(:user_id, :first_name, :last_name, :membership_started_on, social_links: [])
     end
 
     def after_update_url
