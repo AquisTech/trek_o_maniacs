@@ -9,10 +9,10 @@ module VenuesHelper
   end
 
   def options_for_purpose
-    ['Trek', 'Trail', 'Jungle Safari', 'Ghaat', 'Valley', 'Waterfall', 'Beach', 'Sanctuary', 'Caves']
+    ['Fort', 'Trek', 'Trail', 'Jungle Safari', 'Ghaat', 'Valley', 'Waterfall', 'Beach', 'Sanctuary', 'Caves']
   end
 
   def options_for_grade
-    ['Easy', 'Medium', 'Difficult', 'Extreme']
+    ['Easiest', 'Easier', 'Easy', 'Medium', 'Difficult', 'Very Difficult', 'Extreme']
   end
 end
