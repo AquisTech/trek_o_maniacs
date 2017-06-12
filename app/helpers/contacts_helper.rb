@@ -1,5 +1,5 @@
 module ContactsHelper
   def options_for_contact_purposes
-    Contact::CONTACT_PURPOSES
+    Contact::PURPOSES
   end
 end

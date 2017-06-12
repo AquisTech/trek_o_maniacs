@@ -4,7 +4,7 @@ class Contact < ApplicationRecord
   contact_number_attributes :number
 
   # CONSTANTS
-  CONTACT_PURPOSES = [
+  PURPOSES = [
     'Food',
     'Transport',
     'Stay (Rooms)',
@@ -18,7 +18,7 @@ class Contact < ApplicationRecord
 
   # validations
   # validations for number_attributes are defined in gem has_contact_number
-  validates :purpose, presence: true, inclusion: { in: CONTACT_PURPOSES }
+  validates :purpose, presence: true, inclusion: { in: PURPOSES }
   validates :name, presence: true
 
   # Associations
