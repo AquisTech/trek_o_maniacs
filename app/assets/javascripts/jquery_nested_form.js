@@ -45,7 +45,7 @@
 
       // Make a unique ID for the new child
       var regexp  = new RegExp('new_' + assoc, 'g');
-      var new_id  = this.newId();
+      var new_id  = this.newId(assoc);
       content     = $.trim(content.replace(regexp, new_id));
 
       var field = this.insertFields(content, assoc, link);
@@ -55,8 +55,9 @@
         .trigger({ type: 'nested:fieldAdded:' + assoc, field: field });
       return false;
     },
-    newId: function() {
-      return new Date().getTime();
+    newId: function(assoc) {
+      var fieldNum = $('.remove_nested_fields[data-association="' + assoc + '"]').length;
+      return fieldNum;
     },
     insertFields: function(content, assoc, link) {
       var target = $(link).data('target');
