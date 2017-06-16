@@ -8,4 +8,5 @@ class Event < ApplicationRecord
   serialize :disclaimer
   serialize :contact_details
 
+  # validations for start date less than end date
 end

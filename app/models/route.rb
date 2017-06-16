@@ -3,7 +3,7 @@ class Route < ApplicationRecord
   # serialize attributes
   serialize :modes_of_transport
   # validations
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :start_point, presence: true
   validates :via, presence: true
   validates :end_point, presence: true

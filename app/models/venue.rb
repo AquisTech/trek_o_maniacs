@@ -9,4 +9,12 @@ class Venue < ApplicationRecord
   serialize :attractions
   serialize :base_points
 
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
+  validates :purpose, presence: true
+  validates :grade, presence: true
+  validates :region, presence: true
+  validates :description, presence: true
+  # validates :base_points
+  # validates :attractions
+
 end
