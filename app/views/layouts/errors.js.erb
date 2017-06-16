@@ -1,4 +1,12 @@
+$('form .is-invalid-input, form .is-invalid-label').removeClass('is-invalid-input is-invalid-label');
+$('form span.form-error').remove();
 <%- object.all_error_messages.each do |field_name, msg| %>
-  $('[name="<%= field_name %>"]').addClass('is-invalid-input')
-    .after("<span class='form-error is-visible'><%= msg %></span>");
+  if($('[name="<%= field_name %>"]').parent('.input-group').length) {
+    var inputGroup = $('[name="<%= field_name %>"]').parent('.input-group')
+    inputGroup.after("<span class='form-error is-visible'><%= msg %></span>");
+    inputGroup.find('input, textarea, select').addClass('is-invalid-input')
+    inputGroup.find('label, span').addClass('is-invalid-label is-invalid-input')
+  } else {
+    $('[name="<%= field_name %>"]').addClass('is-invalid-input').after("<span class='form-error is-visible'><%= msg %></span>");
+  }
 <%- end %>
