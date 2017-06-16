@@ -48,7 +48,7 @@ class VenuesController < ApplicationController
     end
 
     def venue_params
-      params.require(:venue).permit(:name, :purpose, :grade, :region, :description, attractions: [],
+      params.require(:venue).permit(:name, :purpose, :grade, :region, :description, attractions: [], base_points: [],
         routes_attributes: [:id, :name, :start_point, :via, :end_point, :description, :distance, :_destroy, modes_of_transport: []],
         contacts_attributes: [:id, :purpose, :name, *contact_number_attributes(:number), :_destroy])
     end

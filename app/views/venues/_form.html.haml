@@ -22,6 +22,11 @@
       = f.link_to_add_array_field 'Add More Attraction'
   .row
     %fieldset.fieldset
+      %legend Base Points
+      = f.array_field :base_points
+      = f.link_to_add_array_field 'Add More Base Points'
+  .row
+    %fieldset.fieldset
       %legend Route Details
       = f.fields_for :routes
       = f.link_to_add 'Add more Route', :routes, class: 'button'

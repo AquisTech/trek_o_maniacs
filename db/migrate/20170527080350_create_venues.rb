@@ -7,6 +7,7 @@ class CreateVenues < ActiveRecord::Migration[5.2]
       t.string :region
       t.text :description
       t.text :attractions
+      t.text :base_points
 
       t.timestamps
     end

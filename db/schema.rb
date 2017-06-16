@@ -123,6 +123,7 @@ ActiveRecord::Schema.define(version: 2017_05_27_085029) do
     t.string "region"
     t.text "description"
     t.text "attractions"
+    t.text "base_points"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

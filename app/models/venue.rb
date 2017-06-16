@@ -7,4 +7,6 @@ class Venue < ApplicationRecord
   accepts_nested_attributes_for :contacts, allow_destroy: true
 
   serialize :attractions
+  serialize :base_points
+
 end
