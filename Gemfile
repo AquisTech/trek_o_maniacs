@@ -35,7 +35,7 @@ gem 'foundation-rails'
 
 gem 'jquery-rails'
 
-gem 'devise'
+gem 'devise', '>= 4.6.0'
 
 gem 'high_voltage'
 
