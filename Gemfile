@@ -33,7 +33,7 @@ gem 'haml-rails'
 
 gem 'foundation-rails'
 
-gem 'jquery-rails'
+gem 'jquery-rails', '>= 4.3.4'
 
 gem 'devise'
 
