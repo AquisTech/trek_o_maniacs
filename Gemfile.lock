@@ -77,8 +77,8 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.5.2)
-      public_suffix (>= 2.0.2, < 4.0)
+    addressable (2.8.0)
+      public_suffix (>= 2.0.2, < 5.0)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -175,7 +175,7 @@ GEM
     phony_rails (0.14.5)
       activesupport (>= 3.0)
       phony (~> 2.15)
-    public_suffix (3.0.2)
+    public_suffix (4.0.6)
     puma (3.11.4)
     rack (2.0.5)
     rack-test (0.6.3)
